@@ -2,6 +2,12 @@
 
 function validarCompra($dadosCompras){
     $erros = [];
+
+    if(!$_POST){
+        $erros[] = "Formulario está vazio, acho qeu você ainda não comprou algo!";
+        return $erros;  
+    }
+
     if(!$dadosCompras){
         $erros[] = "Não foi recebido nenhum dado para realizar a compra!";
     }

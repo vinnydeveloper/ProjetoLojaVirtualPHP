@@ -3,15 +3,13 @@ include "funcoes.php";
 $usuario = logarUsuario("Vinicius Oliveira", 1);
 //$usuario = "";
 
-$produtos = [
-    "produto1" => ["nome"=>"Curso Fullstack","descricao"=>"O curso fullstack ensina programação","preco"=> 1200,"img"=>"img/produto1.jpg"],
-    "produto2" => ["nome"=>"Curso Mobile android","descricao"=>"O curso te ensina a criar apps","preco"=>1400,"img"=>"img/produto2.jpg"],
-    "produto3" => ["nome"=>"Curso Marketing Digital","descricao"=>"O curso te ensina a criar apps","preco"=>1100, "img" => "img/produto3.png"],
-    "produto4" => ["nome"=>"Curso Mobile android","descricao"=>"O curso te ensina a criar apps","preco"=>1400, "img"=>"img/produto2.jpg"]
-];
+$jsonProdutos = file_get_contents('Produtos.json');
 
-$produtos = addProduto("Curso de UX","Curso incrivel", 2000,'img/produto3.png',$produtos);
-$produtos = addProduto("Curso de Data Analytics","Curso incrivel", 3000,'img/produto3.png',$produtos);
+$produtos = json_decode($jsonProdutos, true);
+
+$produtos = $produtos['Produtos'];
+
+addProduto("Curso Mobile Android","Curso para criar um app",2300,"img/produto2.jpg");
 
 $categorias = ["Cursos", "Tutoriais", "Artigos", "Forum", "Códigos"];
 ?>
