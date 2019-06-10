@@ -32,7 +32,10 @@ if($erroEnvio !== 0){
     echo '<a class="btn btn-primary" href="cadastroProduto.php">Voltar para de cadastro!</a>';
     exit;
 }
-if(array_search($typeFile, $imgAceitas) == false){
+
+var_dump(array_search($typeFile, $imgAceitas));
+
+if(!is_numeric(array_search($typeFile, $imgAceitas))){
      echo "<h1>Extensão do arquivo invalida, verifique se o arquvio é uma imagem do tipo png, jpg ou jpeg</h1>";
     echo '<a class="btn btn-primary" href="cadastroProduto.php">Voltar para de cadastro!</a>';
     exit;
@@ -42,3 +45,4 @@ if(array_search($typeFile, $imgAceitas) == false){
 move_uploaded_file($arquivoTmp, "img/$nomeArquivo");
 
 addProduto($nomeProduto,$descProduto, $precoProduto, $caminhoImg);
+
