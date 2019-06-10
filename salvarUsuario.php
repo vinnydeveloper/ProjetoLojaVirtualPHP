@@ -16,7 +16,7 @@ echo '<a class="btn btn-primary" href="cadastroUsuario.php">Voltar para de cadas
 exit;
 }
 
-$nomeUsuario = $_POST['nomeUsuario'];
+$nomeUsuario = $_POST['usuario'];
 $emailUsuario = $_POST['emailUsuario'];
 $senhaUsuario = password_hash($_POST['senhaUsuario'],PASSWORD_DEFAULT);
 $nivelUsuario = $_POST['nivelUsuario'];
