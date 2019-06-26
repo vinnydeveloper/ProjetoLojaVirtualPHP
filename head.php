@@ -1,6 +1,6 @@
 <?php
 include "funcoes.php";
-$usuario = logarUsuario("Vinicius Oliveira", 1);
+$usuario = isset($_SESSION['usuario'])?$_SESSION['usuario']:"";
 //$usuario = "";
 
 $jsonProdutos = file_get_contents('Produtos.json');
@@ -21,4 +21,5 @@ $categorias = ["Cursos", "Tutoriais", "Artigos", "Forum", "Códigos"];
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
 </head>

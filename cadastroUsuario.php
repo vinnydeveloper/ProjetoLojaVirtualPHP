@@ -4,13 +4,10 @@
 
 <body>
     <?php include_once "header.php";?>
-
-
     <main class="container">
     <section class="row">
         <div class="col-md-6">
             <form action="salvarUsuario.php" method="post" enctype="multipart/form-data">
-
                 <!-- N produto -->
                 <div class="form-group">
                     <label for="nomeUsuario">Nome do Usuario</label>
@@ -44,9 +41,6 @@
         </div>
     </section>
     </main>
-
-
-
 </body>
 
 </html>
